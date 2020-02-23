@@ -6,7 +6,7 @@ See the full [Salt Formulas installation and usage instructions](http://docs.sal
 ## Available states
 ### `gitlab.server`
 Installs GitLab CE Server.
-### 'gitlab.runner'
+### `gitlab.runner`
 Installs and registers a GitLab Runner.
 
 **Only docker executor is supported for now**
