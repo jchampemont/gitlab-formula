@@ -22,4 +22,4 @@ gitlab-runner:
 
 gitlab-runner register --non-interactive --url "{{ gitlab.url }}" --registration-token "{{ gitlab.runner.token }}" --executor "{{ gitlab.runner.executor }}" --docker-image {{ gitlab.runner.docker_image }} --description "{{ gitlab.runner.description }}" --tag-list "{{ gitlab.runner.tag_list }}" --run-untagged="{{ gitlab.runner.run_untagged }}" --locked="{{ gitlab.runner.locked }}" --access-level="{{ gitlab.runner.access_level }}":
   cmd.run:
-    - creates: /etc/gitlab-runner/config.toml
+    - unless: grep token /etc/gitlab-runner/config.toml
