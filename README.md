@@ -6,11 +6,23 @@ See the full [Salt Formulas installation and usage instructions](http://docs.sal
 ## Available states
 ### `gitlab.server`
 Installs GitLab CE Server.
+### 'gitlab.runner'
+Installs and registers a GitLab Runner.
 
-Example pillar:
+**Only docker executor is supported for now**
+
+## Example pillar:
 
 ```
 gitlab:
-  server:
-    external_url: https://gitlab.example.com
+  url: https://gitlab.example.com     #Required for all states
+  runner:                             #Required for runner state
+    token: token
+    executor: docker
+    docker_image: alpine:latest
+    description: description
+    tag_list: ""
+    run_untagged: "true"
+    locked: "false"
+    access_level: not_protected
 ```

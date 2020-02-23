@@ -1,6 +1,6 @@
 {% from 'gitlab/map.jinja' import gitlab with context %}
 
-gitlab.dependencies:
+gitlab.server.dependencies:
   pkg.installed:
     - pkgs:
       - ca-certificates
@@ -19,7 +19,9 @@ deb-src https://packages.gitlab.com/gitlab/gitlab-ce/{{ salt['grains.get']('os')
 
 EXTERNAL_URL:
   environ.setenv:
-    - value: {{ gitlab.server.external_url }}
+    - value: {{ gitlab.url }}
+    - prereq:
+      - pkg: gitlab-ce
 
 gitlab-ce:
     pkg.installed

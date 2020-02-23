@@ -1,3 +1,11 @@
 gitlab:
-  server:
-    external_url: https://gitlab.example.com
+  url: https://gitlab.example.com
+  runner:
+    token: token
+    executor: docker
+    docker_image: alpine:latest
+    description: description
+    tag_list: ""
+    run_untagged: "true"
+    locked: "false"
+    access_level: not_protected
