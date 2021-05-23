@@ -7,12 +7,12 @@ gitlab.runner.dependencies:
       - apt-transport-https
       - docker.io
 
-deb https://packages.gitlab.com/runner/gitlab-runner/{{ salt['grains.get']('os')|lower }}/ {{ salt['grains.get']('oscodename')|lower }} main:
+deb https://packages.gitlab.com/runner/gitlab-runner/{{ salt['grains.get']('os')|lower }} {{ salt['grains.get']('oscodename')|lower }} main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/runner_gitlab-runner.list
     - key_url: https://packages.gitlab.com/runner/gitlab-runner/gpgkey
 
-deb-src https://packages.gitlab.com/runner/gitlab-runner/{{ salt['grains.get']('os')|lower }}/ {{ salt['grains.get']('oscodename')|lower }} main:
+deb-src https://packages.gitlab.com/runner/gitlab-runner/{{ salt['grains.get']('os')|lower }} {{ salt['grains.get']('oscodename')|lower }} main:
   pkgrepo.managed:
     - file: /etc/apt/sources.list.d/runner_gitlab-runner.list
     - key_url: https://packages.gitlab.com/runner/gitlab-runner/gpgkey
