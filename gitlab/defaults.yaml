@@ -1,4 +1,5 @@
 gitlab:
+  version: 15.5.4-ce.0
   url: https://gitlab.example.com
   runner:
     token: token

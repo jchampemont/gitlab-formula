@@ -15,6 +15,7 @@ Installs and registers a GitLab Runner.
 
 ```
 gitlab:
+  version: 15.5.4-ce.0                #Make sure to set the version and follow official Gitlab upgrade paths
   url: https://gitlab.example.com     #Required for all states
   runner:                             #Required for runner state
     token: token
