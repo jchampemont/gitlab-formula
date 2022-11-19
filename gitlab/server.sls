@@ -24,4 +24,5 @@ EXTERNAL_URL:
       - pkg: gitlab-ce
 
 gitlab-ce:
-    pkg.installed
+    pkg.installed:
+      - version: {{ gitlab.version }}
