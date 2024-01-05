@@ -21,9 +21,4 @@ gitlab:
     token: token
     executor: docker
     docker_image: alpine:latest
-    description: description
-    tag_list: ""
-    run_untagged: "true"
-    locked: "false"
-    access_level: not_protected
 ```
