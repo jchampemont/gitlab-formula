@@ -20,6 +20,6 @@ deb-src https://packages.gitlab.com/runner/gitlab-runner/{{ salt['grains.get']('
 gitlab-runner:
     pkg.installed
 
-gitlab-runner register --non-interactive --url "{{ gitlab.url }}" --registration-token "{{ gitlab.runner.token }}" --executor "{{ gitlab.runner.executor }}" --docker-image {{ gitlab.runner.docker_image }} --description "{{ gitlab.runner.description }}" --tag-list "{{ gitlab.runner.tag_list }}" --run-untagged="{{ gitlab.runner.run_untagged }}" --locked="{{ gitlab.runner.locked }}" --access-level="{{ gitlab.runner.access_level }}":
+gitlab-runner register --non-interactive --url "{{ gitlab.url }}" --token "{{ gitlab.runner.token }}" --executor "{{ gitlab.runner.executor }}" --docker-image {{ gitlab.runner.docker_image }} --description "{{ gitlab.runner.description }}" --tag-list "{{ gitlab.runner.tag_list }}" --run-untagged="{{ gitlab.runner.run_untagged }}" --locked="{{ gitlab.runner.locked }}" --access-level="{{ gitlab.runner.access_level }}":
   cmd.run:
     - unless: grep token /etc/gitlab-runner/config.toml
