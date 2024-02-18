@@ -18,7 +18,8 @@ deb-src https://packages.gitlab.com/runner/gitlab-runner/{{ salt['grains.get']('
     - key_url: https://packages.gitlab.com/runner/gitlab-runner/gpgkey
 
 gitlab-runner:
-    pkg.installed
+    pkg.installed:
+      - version: {{ gitlab.version }}
 
 gitlab-runner register --non-interactive --url "{{ gitlab.url }}" --token "{{ gitlab.runner.token }}" --executor "{{ gitlab.runner.executor }}" --docker-image {{ gitlab.runner.docker_image }}"":
   cmd.run:
