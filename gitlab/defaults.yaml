@@ -1,7 +1,8 @@
 gitlab:
-  version: 15.5.4-ce.0
+  version: 16.9.0-ce.0
   url: https://gitlab.example.com
   runner:
+    version: 16.9.0-1
     token: token
     executor: docker
     docker_image: alpine:latest
