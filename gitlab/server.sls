@@ -26,3 +26,4 @@ EXTERNAL_URL:
 gitlab-ce:
     pkg.installed:
       - version: {{ gitlab.version }}
+      - refresh: True
